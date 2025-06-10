@@ -1,4 +1,15 @@
 package org.example.dto;
 
-public class userInfo {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserInfo {
+    private String UserName;
+    private String UserStatus;
 }
