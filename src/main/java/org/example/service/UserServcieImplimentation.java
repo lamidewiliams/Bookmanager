@@ -71,6 +71,14 @@ public class UserServcieImplimentation implements  UserService{
 
         Users useradd = userRepo.findByUniqueId(addrequest.getUniqueId());
 
+        if (!useradd.getPassword().equals(addrequest.getPassword())) {
+            return UserResponse.builder()
+                    .responseCode(UserUtil.WrongPasswordcode)
+                    .responseMessage(UserUtil.Wrongpasswordmessage)
+                    .userInfo(null)
+                    .build();
+        }
+
         List<String> books = useradd.getBooksList();
         if (books == null) {
             books = new ArrayList<>();
@@ -103,6 +111,14 @@ public class UserServcieImplimentation implements  UserService{
         }
 
         Users useradd = userRepo.findByUniqueId(removerequest.getUniqueId());
+
+        if (!useradd.getPassword().equals(removerequest.getPassword())) {
+            return UserResponse.builder()
+                    .responseCode(UserUtil.WrongPasswordcode)
+                    .responseMessage(UserUtil.Wrongpasswordmessage)
+                    .userInfo(null)
+                    .build();
+        }
 
         List<String> books = useradd.getBooksList();
         if (books == null) {

@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class Addrequest {
     private  String UniqueId;
     private  String book;
+    private String password;
 }

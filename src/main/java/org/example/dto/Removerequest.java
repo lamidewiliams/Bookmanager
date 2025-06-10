@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class Removerequest {
     private  String UniqueId;
     private  String book;
+    private  String password;
 }

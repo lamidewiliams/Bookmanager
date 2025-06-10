@@ -14,6 +14,9 @@ public class UserUtil {
     public static final String BookAddedCode="0004";
     public static final String BookAddedMessage="Book Added!!";
 
+    public static final String WrongPasswordcode="0005";
+    public static final String Wrongpasswordmessage="Account exist!!";
+
     public static final String AccountExistCode="0002";
     public static final String AccountExistmessage="Account exist!!";
 
