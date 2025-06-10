@@ -19,5 +19,7 @@ public class Userconfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api").permitAll()
-
+***************************************************************
+I dont know Spring security yet, but working on it.
+************************************************************
 }*/
