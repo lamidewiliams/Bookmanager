@@ -19,7 +19,7 @@ public class UserServcieImplimentation implements  UserService{
     @Override
     public UserResponse createaccount(UserRequest userRequest) {
 
-        if (userRepo.existByUniqueId(userRequest.getUniqueId())) {
+        if (userRepo.existsByUniqueId(userRequest.getUniqueid())) {
             return UserResponse.builder()
                     .responseCode(UserUtil.AccountExistCode)
                     .responseMessage(UserUtil.AccountExistmessage)
@@ -29,7 +29,7 @@ public class UserServcieImplimentation implements  UserService{
         }
 
         Users newuser = Users.builder()
-                .Uniqueid(UserUtil.FormulateuniquId())
+                .uniqueId(UserUtil.FormulateuniquId())
                 .firstname(userRequest.getFirstname())
                 .lastName(userRequest.getLastName())
                 .Email(userRequest.getEmail())
@@ -60,7 +60,7 @@ public class UserServcieImplimentation implements  UserService{
     @Transactional
     @Override
     public UserResponse addbooks(Addrequest addrequest) {
-        boolean ifAccountExists = userRepo.existByUniqueId(addrequest.getUniqueId());
+        boolean ifAccountExists = userRepo.existsByUniqueId(addrequest.getUniqueId());
         if (!ifAccountExists){
             return UserResponse.builder()
                     .responseCode(UserUtil.AccountNotExistCode)
@@ -93,7 +93,7 @@ public class UserServcieImplimentation implements  UserService{
     @Transactional
     @Override
     public UserResponse removebook(Removerequest removerequest) {
-        boolean ifAccountExists = userRepo.existByUniqueId(removerequest.getUniqueId());
+        boolean ifAccountExists = userRepo.existsByUniqueId(removerequest.getUniqueId());
         if (!ifAccountExists){
             return UserResponse.builder()
                     .responseCode(UserUtil.AccountNotExistCode)

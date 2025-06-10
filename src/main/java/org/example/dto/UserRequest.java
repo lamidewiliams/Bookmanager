@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserRequest {
-    private String UniqueId;
+    private String uniqueid;
     private String firstname;
     private String lastName;
     private String Email;
